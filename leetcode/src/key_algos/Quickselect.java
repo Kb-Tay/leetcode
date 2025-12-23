@@ -17,6 +17,7 @@ public class Quickselect {
     public int quickSelect(int[] arr, int l, int r, int k) {
         int pivot = randomPivot(l, r);
 
+        // note: we do not have to update the pos of k since the arr size does not change!
         int pos = partition(arr, l, r, pivot);
         if (pos > k) {
             return quickSelect(arr, l, pos-1, k); 
